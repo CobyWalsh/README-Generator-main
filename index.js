@@ -2,7 +2,10 @@ var inquirer = require('inquirer');
 const fs = require('fs');
 const fileName = 'README.md';
 
-.prompt([
+const writeFileAsync = fileName.promisify(fs.writeFile);
+
+inquirer
+  .prompt([
     {
         type: "input",
         name: "titleQuestion",
