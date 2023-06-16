@@ -47,15 +47,16 @@ inquirer
     },
     {
         type: "input",
-        name: "GitHubQuestion",
-        message: "What is my GitHub URL"
+        name: "userNameQuestion",
+        message: "What is your GitHub username?"
     },
     {
         type: "input",
-        name: "EmailQuestion",
-        message: "If you have any further questions you can email me at cobywalsh89@gmail.com"
+        name: "emailQuestion",
+        message: "What is your email?"
     },
 ])
+
 .then((promptData) => {
     console.log(promptData);
     writeToReadMe(fileName, promptData)
@@ -70,11 +71,15 @@ function writeToReadMe(fileName, answers) {
     
     var title = answers.titleQuestion;
     var description = answers.descriptionQuestion;
+    var tableOfContents = answers.tableOfContentsQuestions;
     var installation = answers.installationQuestion;
     var usage = answers.usageInformationQuestion;
+    var license = answers.licenseQuestion;
     var contribution = answers.contributionGuidelinesQuestion;
     var testInstructions = answers.testInstructionsQuestion;
     var testInstructions = answers.testInstructionsQuestion;
+    var userName = answers.userNameQuestion;
+    var email = answers.emailQuestion;
     
     var readmeContent = `
     # ${title}
@@ -109,7 +114,7 @@ function writeToReadMe(fileName, answers) {
 
     ## Questions:
 
-   If you have any questions contact me on [GitHub](https://github.com/${github}) or contact me via email at ${email}
+   If you have any questions contact me on [GitHub](https://github.com/${userName}) or contact me via email at ${email}
     `;
     
     fs.writeFile(fileName, readmeContent, err => {
