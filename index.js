@@ -1,14 +1,3 @@
-var title = answers.titleQuestion;
-var description = answers.descriptionQuestion;
-var tableOfContents = answers.tableOfContentsQuestions;
-var installation = answers.installationQuestion;
-var usage = answers.usageInformationQuestion;
-var license = answers.licenseQuestion;
-var contribution = answers.contributionGuidelinesQuestion;
-var testInstructions = answers.testInstructionsQuestion;
-var testInstructions = answers.testInstructionsQuestion;
-var userName = answers.userNameQuestion;
-var email = answers.emailQuestion;
 var inquirer = require('inquirer');
 const fs = require('fs');
 const fileName = 'README.md';
@@ -18,27 +7,22 @@ inquirer
         {
             type: "input",
             name: "titleQuestion",
-            message: "What is the title of my project"
+            message: "What is the title of your project"
         },
         {
             type: "input",
             name: "descriptionQuestion",
-            message: "What is the description of my project"
-        },
-        {
-            type: "input",
-            name: "tableOfContentsQuestion",
-            message: "What is the description of my project"
+            message: "What is the description of your project"
         },
         {
             type: "input",
             name: "instalationQuestion",
-            message: "What is the installation instructions of my project"
+            message: "What is the installation instructions of your project"
         },
         {
             type: "input",
             name: "usageInformationQuestion",
-            message: "What is the usage information for my project"
+            message: "What is the usage information for your project"
         },
         {
             type: "list",
@@ -49,12 +33,12 @@ inquirer
         {
             type: "input",
             name: "contributionGuidelinesQuestion",
-            message: "What is the contribution guidelines for my project"
+            message: "What is the contribution guidelines for your project"
         },
         {
             type: "input",
             name: "testInstructionsQuestion",
-            message: "What are the test instuctions for my project"
+            message: "What are the test instuctions for your project"
         },
         {
             type: "input",
@@ -80,9 +64,20 @@ inquirer
 
 function writeToReadMe(fileName, answers) {
 
+    var title = answers.titleQuestion;
+    var description = answers.descriptionQuestion;
+    var installation = answers.installationQuestion;
+    var usage = answers.usageInformationQuestion;
+    var license = answers.licenseQuestion;
+    var contribution = answers.contributionGuidelinesQuestion;
+    var testInstructions = answers.testInstructionsQuestion;
+    var testInstructions = answers.testInstructionsQuestion;
+    var userName = answers.userNameQuestion;
+    var email = answers.emailQuestion;
+
     var readmeContent = `
     ${badge}
-    # ${title}
+    ${title}
     
     ## Description
     
