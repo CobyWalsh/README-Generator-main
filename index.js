@@ -90,7 +90,12 @@ function writeToReadMe(fileName, answers) {
 
     ## Table of Contents
 
-    ${tableOfContents}
+   * [Installation](#installation)
+   * [Usage](#usage)
+   * [License](#license)
+   * [Contribution](#contribution)
+   * [Test](#test)
+   * [Questions](#questions) 
     
     ## Installation
     
