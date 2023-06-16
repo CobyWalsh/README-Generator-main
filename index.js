@@ -74,51 +74,53 @@ function writeToReadMe(fileName, answers) {
     var userName = answers.userNameQuestion;
     var email = answers.emailQuestion;
 
-    var readmeContent = `
-    ${badge}
-    # ${title}
+    var readMeContent = `
+${badge}
+# ${title}
     
-    ## Description
+## Description
     
-    ${description}
+${description}
 
-    ## Table of Contents
+## Table of Contents
 
-   * [Installation](#installation)
-   * [Usage](#usage)
-   * [License](#license)
-   * [Contribution](#contribution)
-   * [Test](#test)
-   * [Questions](#questions) 
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contribution](#contribution)
+* [Test](#test)
+* [Questions](#questions) 
     
-    ## Installation
+## Installation
     
-    ${installation}
+${installation}
     
-    ## Usage Information
+## Usage Information
     
-    ${usage}
+${usage}
 
-    ## License
+## License
 
-    ${license}
+${license}
     
-    ## Contribution Guidelines
+## Contribution Guidelines
     
-    ${contribution}
+${contribution}
     
-    ## Test Instructions
+## Test Instructions
     
-    ${testInstructions}
+${testInstructions}
 
-    ## Questions:
+# Questions:
 
-   If you have any questions, feel free to reach out: 
-   GitHub: [GitHub](https://github.com/${userName}) 
-   Email: ${email}
-    `;
+If you have any questions, feel free to reach out: 
 
-    fs.writeFile(fileName, readmeContent, err => {
+GitHub: [GitHub](https://github.com/${userName}) 
+
+Email: ${email}
+`;
+
+    fs.writeFile(fileName, readMeContent, err => {
         err ? console.error(err) : console.log('readme file created!')
 
     });
