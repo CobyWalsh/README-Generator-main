@@ -9,7 +9,6 @@ var testInstructions = answers.testInstructionsQuestion;
 var testInstructions = answers.testInstructionsQuestion;
 var userName = answers.userNameQuestion;
 var email = answers.emailQuestion;
-
 var inquirer = require('inquirer');
 const fs = require('fs');
 const fileName = 'README.md';
@@ -81,8 +80,8 @@ inquirer
 
 function writeToReadMe(fileName, answers) {
 
-
     var readmeContent = `
+    ${badge}
     # ${title}
     
     ## Description
