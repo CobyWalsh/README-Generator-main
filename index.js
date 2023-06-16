@@ -1,11 +1,9 @@
 var inquirer = require('inquirer');
 const fs = require('fs');
-const fileName = 'README.md';
-
-const writeFileAsync = fileName.promisify(fs.writeFile);
+const fileName= 'README.md';
 
 inquirer
-  .prompt([
+    .prompt([
     {
         type: "input",
         name: "titleQuestion",
@@ -37,15 +35,16 @@ inquirer
         message: "What are the test instuctions for my project"
     },
 ])
-.then((error) => {
-    console.log(answers);
-    fs.appendFile("README.md", answers.nameQuestion, (error) => error ? console.log(error) : console.log("Success!"));
-})
+.then((promptData) => {
+    console.log(promptData);
+    writeToReadMe(fileName, promptData)
+}) 
 .catch((error) => {
     if (error.isTtyError) {
     console.log("There is an error");        
     }
 })
+
 function writeToReadMe(fileName, answers) {
     fs.writeFile(fileName, answers, err => {
         err ? console.error(err) : console.log('readme file created!')
