@@ -43,17 +43,43 @@ inquirer
     if (error.isTtyError) {
     console.log("There is an error");        
     }
-})
+});
 
 function writeToReadMe(fileName, answers) {
-    fs.writeFile(fileName, answers, err => {
-        err ? console.error(err) : console.log('readme file created!')
-    });
+    
     var title = answers.titleQuestion;
     var description = answers.descriptionQuestion;
     var installation = answers.installationQuestion;
     var usage = answers.usageInformationQuestion;
     var contribution = answers.contributionGuidelinesQuestion;
     var testInstructions = answers.testInstructionsQuestion;
-    // var readmeToWrite = README.md
+    var testInstructions = answers.testInstructionsQuestion;
+    
+    var readmeContent = `
+    # ${title}
+    
+    ## Description
+    
+    ${description}
+    
+    ## Installation
+    
+    ${installation}
+    
+    ## Usage Information
+    
+    ${usage}
+    
+    ## Contribution Guidelines
+    
+    ${contribution}
+    
+    ## Test Instructions
+    
+    ${testInstructions}
+    `;
+    fs.writeFile(fileName, readmeContent, err => {
+        err ? console.error(err) : console.log('readme file created!')
+    
+});
 }
