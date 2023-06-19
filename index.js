@@ -75,7 +75,7 @@ function writeToReadMe(fileName, answers) {
     var email = answers.emailQuestion;
 
     var readMeContent = `
-${badge}
+
 # ${title}
     
 ## Description
