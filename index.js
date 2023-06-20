@@ -16,7 +16,7 @@ inquirer
         },
         {
             type: "input",
-            name: "instalationQuestion",
+            name: "installationQuestion",
             message: "What is the installation instructions of your project?"
         },
         {
@@ -51,10 +51,9 @@ inquirer
             message: "What is your email?"
         },
     ])
-
     .then((promptData) => {
         console.log(promptData);
-        writeToReadMe(fileName, promptData);
+        writeToReadMe(promptData);
     })
     .catch((error) => {
         if (error.isTtyError) {
@@ -62,8 +61,7 @@ inquirer
         }
     });
 
-function writeToReadMe(fileName, answers) {
-
+function writeToReadMe(answers) {
     var title = answers.titleQuestion;
     var description = answers.descriptionQuestion;
     var installation = answers.installationQuestion;
@@ -74,54 +72,71 @@ function writeToReadMe(fileName, answers) {
     var userName = answers.userNameQuestion;
     var email = answers.emailQuestion;
 
-    var readMeContent = `
+    function renderLicenseBadge(licenseBadge) {
+        let yourLicense = ''
+        if (licenseBadge === 'MIT') {
+            yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
+        } else if (licenseBadge === 'Apache 2.0') {
+            yourLicense = `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
+        } else if (licenseBadge === 'GNU GPL 3.0') {
+            yourLicense = `![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)`
+        } else {
+            yourLicense = '![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)'
+        }
+        return yourLicense;
+    }
 
-# ${title}
+    function returnReadmeContent() {
+        return `
+${() => renderLicenseBadge(license)}
     
+ # ${title}
+            
 ## Description
-    
+            
 ${description}
-
+    
 ## Table of Contents
-
+    
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 * [Contribution](#contribution)
 * [Test](#test)
 * [Questions](#questions) 
-    
+            
 ## Installation
-    
+            
 ${installation}
-    
+            
 ## Usage Information
-    
+            
 ${usage}
-
+    
 ## License
-
+    
 ${license}
-    
+            
 ## Contribution Guidelines
-    
+            
 ${contribution}
-    
+            
 ## Test Instructions
-    
+            
 ${testInstructions}
-
+    
 # Questions:
-
+    
 If you have any questions, feel free to reach out: 
-
+    
 GitHub: [GitHub](https://github.com/${userName}) 
-
+    
 Email: ${email}
-`;
+        `;
+    }
 
-    fs.writeFile(fileName, readMeContent, err => {
+    fs.writeFile(fileName, returnReadmeContent(), 'utf-8', err => {
         err ? console.error(err) : console.log('readme file created!')
-
     });
+
 }
