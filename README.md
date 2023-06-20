@@ -1,11 +1,11 @@
 
-() => renderLicenseBadge(license)
+
     
- # asf
+ # as
             
 ## Description
             
-ad
+sg
     
 ## Table of Contents
     
@@ -18,23 +18,23 @@ ad
             
 ## Installation
             
-adfg
+asfg
             
 ## Usage Information
             
-afg
+ag
     
 ## License
     
-APACHE 2.0
+Boost Software 1.0
             
 ## Contribution Guidelines
             
-ag
+abge
             
 ## Test Instructions
             
-ager
+agds
     
 # Questions:
     
@@ -42,5 +42,5 @@ If you have any questions, feel free to reach out:
     
 GitHub: [GitHub](https://github.com/ag) 
     
-Email: age
+Email: ag
         
