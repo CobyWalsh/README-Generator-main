@@ -1,11 +1,11 @@
 
-
+() => renderLicenseBadge(license)
     
- # as
+ # zv
             
 ## Description
             
-sg
+zcv
     
 ## Table of Contents
     
@@ -18,11 +18,11 @@ sg
             
 ## Installation
             
-asfg
+zdfg
             
 ## Usage Information
             
-ag
+zb
     
 ## License
     
@@ -30,17 +30,17 @@ Boost Software 1.0
             
 ## Contribution Guidelines
             
-abge
+zdf
             
 ## Test Instructions
             
-agds
+zbndf
     
 # Questions:
     
 If you have any questions, feel free to reach out: 
     
-GitHub: [GitHub](https://github.com/ag) 
+GitHub: [GitHub](https://github.com/zb) 
     
-Email: ag
+Email: bfg
         
