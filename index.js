@@ -88,7 +88,7 @@ function writeToReadMe(answers) {
 
     function returnReadmeContent() {
         return `
-${() => renderLicenseBadge(license)}
+${renderLicenseBadge(license)}
     
  # ${title}
             
