@@ -1,11 +1,11 @@
 
 ![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)
     
- # Professional README
+ # I created a sample  professional README using node, inquierer and JavaScript. The purpose of the project was to build a template for future README files for my projects in the future
             
 ## Description
             
-I created a professional README using node and JavaScript. The purpose of the project was to build a template for future README files for my projects in the futuree.
+Professional README
     
 ## Table of Contents
     
@@ -18,23 +18,23 @@ I created a professional README using node and JavaScript. The purpose of the pr
             
 ## Installation
             
-There are no intallation instructions at this time.
+no istallation instructions at this time
             
 ## Usage Information
             
-For future enployers who are interested in projects I have created
+No usage information at this time
     
 ## License
     
-APACHE 2.0
+GNU General Public Lcense 3.0
             
 ## Contribution Guidelines
             
-There are no contribution guidelines at this time.
+There are no contribution guidelines at this time
             
 ## Test Instructions
             
-There are no test instructions at this time.
+There are no test instructions at this time
     
 # Questions:
     
