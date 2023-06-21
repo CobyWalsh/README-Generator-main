@@ -1,4 +1,4 @@
-# Project README
+# Professional README
 
 ## Description
 In this project I created a Professional README.md file using a command line application with node, inquirer and JavaScript. I wrote inquirer code into my index.js file so that when I type "node index" into my command line the list of questions I prompted in my code will populate in my command line. After answering all the questions accordingly a new README.md file will generate with all the approprate information. I made my table of contents clickable so when you click on "License" for example, it will take you to the license section of my README. I also added a licsense badge at the top of my sample README that corrilates to the license chosen.
