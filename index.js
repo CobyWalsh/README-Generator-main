@@ -2,6 +2,7 @@ var inquirer = require('inquirer');
 const fs = require('fs');
 const fileName = 'README.md';
 
+//  Using inquirer and prompt to generate my questions into my command line.
 inquirer
     .prompt([
         {
@@ -51,17 +52,20 @@ inquirer
             message: "What is your email?"
         },
     ])
+    //  Writing my prompt data into my README file
     .then((promptData) => {
         console.log(promptData);
         writeToReadMe(promptData);
     })
+    //  If there are any errors the "There is an error" will generate
     .catch((error) => {
         if (error.isTtyError) {
             console.log("There is an error");
         }
     });
 
-function writeToReadMe(answers) {
+    //  Creating my function variables to write the prompt information to my README file
+    function writeToReadMe(answers) {
     var title = answers.titleQuestion;
     var description = answers.descriptionQuestion;
     var installation = answers.installationQuestion;
@@ -72,6 +76,7 @@ function writeToReadMe(answers) {
     var userName = answers.userNameQuestion;
     var email = answers.emailQuestion;
 
+    // Creating the badge for each license choice
     function renderLicenseBadge(licenseBadge) {
         let yourLicense = ''
         if (licenseBadge === 'MIT') {
@@ -86,6 +91,7 @@ function writeToReadMe(answers) {
         return yourLicense;
     }
 
+    // Created the function to write my README in the following format
     function returnReadmeContent() {
         return `
 ${renderLicenseBadge(license)}
@@ -135,6 +141,7 @@ Email: ${email}
         `;
     }
 
+    //  This creates the README with the correct filename 
     fs.writeFile(fileName, returnReadmeContent(), 'utf-8', err => {
         err ? console.error(err) : console.log('readme file created!')
     });
