@@ -33,7 +33,7 @@ inquirer
         {
             type: "input",
             name: "contributionGuidelinesQuestion",
-            message: "What is the contribution guidelines for your project?"
+            message: "What are the contribution guidelines for your project?"
         },
         {
             type: "input",
